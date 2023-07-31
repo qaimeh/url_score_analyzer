@@ -55,6 +55,7 @@ This will execute all the test classes in the `src/test/java` directory and disp
 
 ## Calculating score statistics using PostgreSQL and SQL script
 The sample dataset file `sample_dataset.csv` containing URLs and respective score was also tested by dumping the data into PostgreSQL.
+
 ##STEPS:
 1. Create table
 ```
@@ -68,11 +69,11 @@ CREATE TABLE urls_with_score (
 ```
 COPY urls_with_score (url, social_score) from 'path to csvfile' DELIMITER ',' CSV HEADER;
 ```
-1. To check if data was loaded successfully
+2. To check if data was loaded successfully
 ```
 select * from urls_with_score limit 10;
 ```
-1. To find  and cross check the desired results which java implementation produces
+3. To find  and cross check the desired results which java implementation produces
 ```
  SELECT SUBSTRING(url FROM '(?:https?://)?(?:[^@\\n]+@)?(?:www\\.)?([^:/\\n?]+)') as domain,
        COUNT(*) as urls,
