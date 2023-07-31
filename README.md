@@ -25,7 +25,7 @@ This will create an executable JAR file named ?url-social-analyzer-1.0-SNAPSHOT.
 
 After building the project, you can run the application from the command line using the following command:
 
-    ```java -jar target/url-social-analyzer-1.0-SNAPSHOT.jar```
+    ```java -jar target/url-score-analyzer-1.0-SNAPSHOT.jar```
 
 ### From IntelliJ IDEA
 
@@ -52,6 +52,8 @@ Once the application is running, either using jar or from Intellij, you can use 
 
 To run the test cases, use the following Maven command:
 
-    ```mvn test```
+    ```
+    mvn test
+    ```
 
 This will execute all the test classes in the `src/test/java` directory and display the test results.
