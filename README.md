@@ -52,3 +52,32 @@ To run the test cases, use the following Maven command:
 - `mvn test`
 
 This will execute all the test classes in the `src/test/java` directory and display the test results.
+
+## Calculating score statistics using PostgreSQL and SQL script
+The sample dataset file `sample_dataset.csv` containing URLs and respective score was also tested by dumping the data into PostgreSQL.
+##STEPS:
+1. Create table
+```
+CREATE TABLE urls_with_score (
+    id SERIAL PRIMARY KEY,
+    url VARCHAR(255) NOT NULL,
+    social_score INTEGER NOT NULL
+);
+```
+1. COPY data from csv to table
+```
+COPY urls_with_score (url, social_score) from 'path to csvfile' DELIMITER ',' CSV HEADER;
+```
+1. To check if data was loaded successfully
+```
+select * from urls_with_score limit 10;
+```
+1. To find  and cross check the desired results which java implementation produces
+```
+ SELECT SUBSTRING(url FROM '(?:https?://)?(?:[^@\\n]+@)?(?:www\\.)?([^:/\\n?]+)') as domain,
+       COUNT(*) as urls,
+       SUM(social_score) as social_score
+FROM urls_with_score
+GROUP BY domain
+ORDER BY social_score DESC;
+```
