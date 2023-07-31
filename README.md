@@ -14,7 +14,6 @@ Before running the application, make sure you have the following installed on yo
 ### Build the Project using Maven
 
 To build the project and package it into a JAR file, cd to home directory and use the following maven command:
-
     - `mvn clean package`
 
 This will create an executable JAR file named `url-score-analyzer-1.0-SNAPSHOT.jar` in the ?target? directory
@@ -24,7 +23,6 @@ This will create an executable JAR file named `url-score-analyzer-1.0-SNAPSHOT.j
 ## From Command Line
 
 After building the project, you can run the application from the command line using the following command:
-
     - `java -jar target/url-score-analyzer-1.0-SNAPSHOT.jar`
 
 ### From IntelliJ IDEA
@@ -51,7 +49,6 @@ Once the application is running, either using jar or from Intellij, you can use 
 ## Running Tests
 
 To run the test cases, use the following Maven command:
-
     - `mvn test`
 
 This will execute all the test classes in the `src/test/java` directory and display the test results.
