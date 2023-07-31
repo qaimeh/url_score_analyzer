@@ -54,7 +54,7 @@ To run the test cases, use the following Maven command:
 This will execute all the test classes in the `src/test/java` directory and display the test results.
 
 # Calculating score statistics using PostgreSQL and SQL script
-The sample dataset file `sample_dataset.csv` containing URLs and respective score was also tested by dumping the data into PostgreSQL.
+The sample dataset file `sample_dataset.csv` containing URLs and respective score can also be tested in PostgreSQL.
 
 ### STEPS:
 1. Create table
